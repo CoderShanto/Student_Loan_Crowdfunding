@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trust Ratings</title>
+    <style>
+        .trust-page .header {
+    text-align: center;
+    background: linear-gradient(to right, #ff99cc, #66ccff);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.trust-score {
+    text-align: center;
+    margin: 20px 0;
+    background: #f0f8ff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.trust-score .score {
+    color: #FFD700;
+    font-size: 24px;
+}
+
+.feedback {
+    margin: 20px 0;
+}
+
+.feedback-item {
+    display: flex;
+    align-items: center;
+    background: #fdfdfd;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.feedback-item .rating {
+    margin-left: auto;
+    font-size: 18px;
+    color: #FFD700;
+}
+
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container trust-page">
+        <header class="header">
+            <h1>Trust Ratings of Jamil</h1>
+            <p>See what others think about Jamil's trustworthiness</p>
+        </header>
+        <section class="trust-score">
+            <img src="profile-picture.jpg" alt="Jamil Profile" class="profile-picture">
+            <h2>Overall Trust Score: <span class="score">4.7 ⭐</span></h2>
+        </section>
+        <section class="feedback">
+            <h2>Lender Feedback</h2>
+            <div class="feedback-item">
+                <img src="lender1.jpg" alt="Lender">
+                <p><b>Afia Naziba Cosmic:</b> Great experience, although there was a slight delay in payment.</p>
+                <div class="rating">⭐⭐⭐⭐</div>
+            </div>
+            <div class="feedback-item">
+                <img src="lender2.jpg" alt="Lender">
+                <p><b>Shafin Ahmed:</b> Jamil was reliable and paid back on time. Highly recommended!</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

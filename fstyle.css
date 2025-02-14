@@ -1,0 +1,460 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: #dc1212;
+    border-right: 2px solid #333;
+    width: 20%;
+    padding: 20px;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.sidebar.hidden {
+    display: none; /* Hide the sidebar */
+}
+
+.toggle-container {
+    background-color: #1f1f1f;
+    padding: 10px;
+    border-right: 2px solid #333;
+    text-align: center;
+}
+
+.toggle-btn {
+    background: #0fdda6;
+    border: none;
+    color: #121212;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.toggle-btn:hover {
+    background: #ffffff;
+}
+
+
+
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background: linear-gradient(to bottom right, #1f0e2f, #37474f);
+    overflow-y: auto; /* Enables scrolling for content */
+}
+
+.search-bar {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: #e0e0e0;
+    font-size: 14px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #00f2f7;
+    color: #121212;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background: #009fbd;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    background-color: #3aa982;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.profile-header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #ffd700;
+    margin-right: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    background: #00f2f7;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.tabs div {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #5601f4;
+    color: #e0e0e0;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.tabs div:hover {
+    background: #4c11d4;
+}
+
+.section {
+    display: none; /* Initially hide all sections */
+}
+
+.section.active {
+    display: block; /* Show active section */
+}
+
+.post, .friends, .videos, .photos {
+    width: 100%;
+    background: #0282f9;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(2, 6, 244, 0.3);
+}
+
+.post .post-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #333;
+    border-radius: 8px;
+    color: #ffd700;
+}
+
+.videos img, .photos img {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #ffd700;
+}
+
+/* Profile Icon in the corner */
+.profile-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #3aa982;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Dropdown menu for the profile */
+.profile-menu {
+    display: none;
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    background: #1f1f1f;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 150px;
+}
+
+.profile-menu a {
+    display: block;
+    padding: 8px 10px;
+    color: #e0e0e0;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.profile-menu a:hover {
+    background: #0fdda6;
+}
+ /* Style for the three dots menu button */
+.menu-btn {
+background: #12614d; /* Matches the existing color scheme */
+color: #fff;
+border: none;
+font-size: 24px; /* Size of the dots */
+cursor: pointer;
+padding: 10px;
+border-radius: 50%; /* Circular button */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+position: fixed;
+top: 20px;
+right: 20px;
+z-index: 100; /* Ensure it stays on top */
+}
+
+.menu-btn:hover {
+background: #2d8c68; /* Darker green on hover */
+}
+
+/* Dropdown menu for the profile */
+.profile-menu {
+display: none; /* Initially hidden */
+position: fixed;
+top: 70px; /* Positioned below the button */
+right: 20px;
+background: #1f1f1f;
+padding: 10px;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+width: 150px;
+}
+
+.profile-menu a {
+display: block;
+padding: 8px 10px;
+color: #e0e0e0;
+text-decoration: none;
+margin: 5px 0;
+transition: background 0.3s;
+}
+
+.profile-menu a:hover {
+background: #0fdda6; /* Bright green on hover */
+}
+.profile-header {
+display: flex;
+align-items: center;
+background-color: #3aa982;
+padding: 20px;
+border-radius: 10px;
+margin-bottom: 20px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.profile-header img {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+border: 3px solid #ffd700;
+margin-right: 20px;
+}
+
+.profile-details {
+color: #fff;
+}
+
+.profile-details h2 {
+margin: 0;
+font-size: 24px;
+}
+
+.profile-details .user-bio {
+font-style: italic;
+margin: 5px 0;
+color: #e0e0e0;
+}
+
+.profile-details .user-profession,
+.profile-details .user-interests {
+margin: 2px 0;
+color: #fff;
+}
+
+.profile-details strong {
+color: #ffd700;
+}
+
+
+
+
+
+
+/* Icon styles */
+.sidebar-item .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+/* Text styles */
+.sidebar-item span {
+    font-size: 16px;
+}
+
+    .info-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Space between rows */
+    }
+
+    .info-item {
+        display: flex;
+        align-items: center; /* Align icons and text vertically */
+        gap: 10px; /* Space between icon/image and text */
+    }
+
+    .info-item i, .img1 {
+        width: 20px; /* Consistent size for icons and images */
+        height: 20px;
+    }
+
+    .info-item span {
+        display: flex;
+        align-items: center; /* Align image and text vertically */
+        gap: 5px; /* Space between image and text */
+    }
+
+    .p-info {
+        margin: 0; /* Remove default margin from <p> */
+        font-size: 14px; /* Set consistent text size */
+        color: #333; /* Optional: Text color */
+    }
+
+/* cool icons */
+/*edit here for sidebar */
+
+    /* Sidebar Container Important */
+    .sidebar {
+        width: 300px;
+
+        /*sidebar clr */
+        background-color: #ebf5f2;
+
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        font-family: Arial, sans-serif;
+    }
+
+    /* Sidebar Title */
+    .sidebar h1 {
+        font-size: 40px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    /* Sidebar Items */
+    .sidebar-item {
+        display: flex;
+        align-items: center; /* Align icons and text vertically */
+        justify-content: flex-start; /* Ensure they align horizontally to the start */
+        gap: 7px; /* Equal spacing between icon and text */
+        margin-bottom: 20px; /* Space between items */
+    }
+    .sidebar-item i.fas.fa-id-card {
+        margin-right: 27px; /* Adjust the value to create a gap */
+    }
+    
+    /* FontAwesome Icons */
+    .sidebar-item i.icon {
+        color: #007bff; /* Icon color */
+        font-size: 20px;
+        margin-right: 10px; /* Space between icon and text */
+    }
+
+    /* Image Icons */
+    .sidebar-item img.img2 {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px; /* Space between image and text */
+    }
+
+    /* Text and Links */
+    .sidebar-item span,
+    .sidebar-item a {
+        font-size: 16px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .sidebar-item a:hover {
+        text-decoration: underline;
+        color: #45f505;
+    }
+
+    /* Sidebar Info Text */
+    .side-info {
+        margin: 0; /* Remove default margin from <p> */
+        font-size: 14px;
+        color: #555; /* Optional: secondary text color */
+    }
+
+    /* Buttons */
+    .sidebar-item button {
+        background-color: #248768;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 14px;
+        cursor: pointer;
+        margin-left: 10px; /* Space between text and button */
+    }
+
+    .sidebar-item button:hover {
+        background-color: #45f505; /* A slightly darker shade for a professional look */
+        color: white; /* Change text color for better contrast */
+        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow for a lifted effect */
+    }
+    
+    /* Adjust Sidebar Items for Responsive Design */
+    .sidebar-item span,
+    .sidebar-item a,
+    .sidebar-item button {
+        flex-grow: 1; /* Ensure text and buttons adjust flexibly */
+    }
+
+
+.img2{
+    width:25px;
+    height:25px;
+   position:absolute;
+   left:10px;
+}
+.sidebar-item span {
+    display: flex;
+    align-items: center; /* Align image and text vertically */
+    gap: 10px; /* Space between image and text */
+    flex-grow: 1; /* Allow items to take equal space if needed */
+    width: 100%; /* Ensures uniform width for each item */
+}
+
+.sidebar-item img.img2 {
+    width: 30px;
+    height: 30px;
+    object-fit: contain; /* Keeps the aspect ratio of images */
+}
+
+.side-info {
+    margin: 0; /* Remove default margins */
+    font-size: 14px; /* Ensure consistent font size */
+    color: #555; /* Optional text color for better readability */
+}
+.nam{
+    color:#0282f9
+}

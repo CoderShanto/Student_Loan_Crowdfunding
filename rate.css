@@ -1,0 +1,94 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #121212, #61d732);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(228, 204, 119, 0.2);
+}
+
+header {
+    text-align: center;
+ background-color: rgba(0, 255, 0, 0.5);
+
+    border-radius: 10px;
+    padding: 20px;
+    color: #333;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #f0f8ff;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0.4, 0.3, 0, 0.4);
+}
+
+.profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.trust-score {
+    text-align: right;
+}
+
+.trust-score h1 {
+    font-size: 36px;
+    color: #4caf50;
+}
+
+.feedback {
+    margin-top: 20px;
+}
+
+.feedback h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.feedback-card {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0.4, 0.3, 0, 0.4);
+}
+
+.feedback-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.feedback-text h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.feedback-text p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.stars {
+    margin-left: auto;
+    font-size: 18px;
+    color: #ffcc00;
+}

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BorrowHub</title>
+    <style>
+        /* General Styles */
+        body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    width: 90%;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #4a4a4a;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+.filter-container {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+}
+
+.filter-label {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #5a5a5a;
+}
+
+select {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: #6e8efb;
+    outline: none;
+}
+
+.post-container {
+    margin-top: 20px;
+    padding: 25px 30px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.post-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #4a4a4a;
+}
+
+.post-title img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-content {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    font-size: 1rem;
+    color: #5a5a5a;
+}
+
+.post-date {
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    display: block;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+button {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #5a76d8, #9258c8);
+    transform: scale(1.05);
+}
+
+.no-results {
+    text-align: center;
+    color: #666;
+    margin-top: 30px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    display: none;
+}
+.nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #f5f5f5;
+      padding: 10px 20px;
+      margin-bottom: 8px;
+      border-bottom: 2px solid #ddd;
+    }
+
+    .nav-title {
+      font-size: 24px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .nav-buttons {
+      display: flex;
+    }
+
+    .nav .nav-button {
+      background-color: #3498db;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      margin-left: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav .nav-button:hover {
+      background-color: #2980b9;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BorrowHub</h1>
+        <nav class="nav">
+            <a href="Profile_page.html"><button class="nav-button">Profile</button></a>
+            <a href="feeds.php"><button class="nav-button">All Posts</button></a>
+            <a href="contact.html"><button class="nav-button">Contact</button></a>
+          </nav>
+
+        <div class="filter-container">
+            <label class="filter-label" for="interest-rate">Filter by Interest Rate:</label>
+            <select id="interest-rate">
+                <option value="all">All</option>
+                <option value="below_5">Below 5%</option>
+                <option value="5_to_10">5% - 10%</option>
+                <option value="above_10">Above 10%</option>
+            </select>
+        </div>
+
+        <div id="post-list">
+            <!-- Post 1 -->
+            <div class="post-container">
+                <div class="post-title">
+                    <button><a href="Friend_profile.html"><img src="image/jamil.jpg" alt="Profile Photo"></a></button>
+                    Only 5% Interest? Let’s Make It Happen!
+                </div>
+                <div class="post-content">
+                    Hey there, buddy! You know I trust you, right? So here’s the deal: I’ll give you the loan you need, and all I ask is just 5% interest. That means you’ll have to pay 1050 Taka with the 5% interest rate within 7 days.
+
+                    No strings attached, no big formalities – it’s all about helping you achieve your goals. So, let’s shake on it, and you can get started right away. Deal? 😊
+                </div>
+                <span class="post-date">January 07, 2025 01:15 PM</span>
+                <div class="action-buttons">
+                    <button>Online</button>
+                    <a href="security_check.php"><button>Chat</button></a>
+                </div>
+            </div>
+
+            <!-- Post 2 -->
+            <div class="post-container">
+                <div class="post-title">
+                    <button><a href="Friend_profile.html"><img src="image/cosmic.jpg" alt="Profile Photo"></a></button>
+                    We’ve Got This – 5.5% Interest for You
+                </div>
+                <div class="post-content">
+                    Friendship means trust, and I know we’ve got that. So here’s the deal: I’ll help you out with a loan at only 5.5% interest. That means you’ll need to pay 1055 Taka with the 5.5% interest rate within 7 days.
+
+No worries, no complications – just a fair and simple way to support each other. Let’s make it work. What do you say? 😊
+                </div>
+                <span class="post-date">January 08, 2025 02:30 PM</span>
+                <div class="action-buttons">
+                    <button>Offline</button>
+                    <a href="security_check.html"><button>Chat</button></a>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- No Results Message -->
+        <div class="no-results" id="no-results-message">No posts found for the selected interest rate.</div>
+    </div>
+
+    <script>
+        const interestRateSelect = document.getElementById('interest-rate');
+        const postContainers = document.querySelectorAll('.post-container');
+        const noResultsMessage = document.getElementById('no-results-message');
+
+        interestRateSelect.addEventListener('change', () => {
+            const selectedRate = interestRateSelect.value;
+            let hasVisiblePosts = false;
+
+            postContainers.forEach(post => {
+                let interestRate = post.querySelector('.post-content').textContent; 
+                interestRate = interestRate.match(/(\d+\.?\d*)%/); // Extract interest rate from content
+
+                if (selectedRate === 'all') {
+                    post.style.display = 'block';
+                    hasVisiblePosts = true;
+                } else if (selectedRate === 'below_5' && interestRate && parseFloat(interestRate[1]) < 5) {
+                    post.style.display = 'block';
+                    hasVisiblePosts = true;
+                } else if (selectedRate === '5_to_10' && interestRate && parseFloat(interestRate[1]) >= 5 && parseFloat(interestRate[1]) <= 10) {
+                    post.style.display = 'block';
+                    hasVisiblePosts = true;
+                } else if (selectedRate === 'above_10' && interestRate && parseFloat(interestRate[1]) > 10) {
+                    post.style.display = 'block';
+                    hasVisiblePosts = true;
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+
+            // Toggle no-results message
+            noResultsMessage.style.display = hasVisiblePosts ? 'none' : 'block';
+        });
+    </script>
+</body>
+</html>

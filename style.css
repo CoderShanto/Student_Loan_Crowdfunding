@@ -1,0 +1,198 @@
+*{
+  padding: 0;
+  margin: 0;
+  /**box-sizing: border-box;**/
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.hero{
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  
+  
+  
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+  padding-left: 10%;
+  padding-right: 10%;
+  
+}
+.logo{
+  color: #0cc51b;
+  font-size: 28px;
+}
+.logo:hover{
+  color:#ffffff;
+  transform: scale(1.3);
+  cursor: pointer;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+}
+nav ul li{
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px 20px;
+}
+nav ul li a{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav ul li a:hover{
+  color: #0cc51b;
+  transition: .3s;
+}
+button{
+  border: none;
+  background: #0cc51b;
+  padding: 12px 30px;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  transition: .4s;
+}
+button:hover{
+  transform: scale(1.2);
+  cursor: pointer;
+  background: white;
+  color: #0f4124;
+}
+
+#innerbody{
+  height: 80%;
+  width: 90%;
+  padding-top: 10px;
+  border-radius: 20px;
+  background: #1c1c1c;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin: auto;
+  position: relative;
+  /*box-shadow: 0 0 5px 10px;*/
+  
+}
+
+
+body{
+
+  background: #0f4124;
+  display: flex;
+
+}
+.action-sections {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  padding:300px;
+  background-color: transparent;
+}
+
+.section {
+  width: 500px;
+}
+
+.photo-container {
+  width: 25vw;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background-size: cover;
+  background-position: center;
+  border: 5px solid #1f1f1f;
+  border-radius: 8px;
+  box-shadow: 3px 4px 4px 3px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.photo-container1 {
+  background-image: url(img/borrow.png);
+  width: 20vw;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  border:2px solid #1f1f1f;
+  border-radius: 20px;
+  box-shadow: 3px 4px 4px 3px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.photo-container2 {
+  background-image: url(img/lend.jpg);
+  width: 20vw;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #1f1f1f;
+  border-radius: 20px;
+  box-shadow: 3px 4px 4px 3px rgba(0,0,0,0.5);
+  position: relative;
+ 
+}
+
+.photo-container3 {
+  background-image: url(img/donate.jpeg);
+  width: 20vw;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #1f1f1f;
+  border-radius: 20px;
+  box-shadow: 3px 4px 4px 3px rgba(0,0,0,0.5);
+  position: relative;
+}
+.section:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  background: transparent;
+  box-shadow: rgba(76, 243, 104, 0.696) 0 0 90px 10px;
+  border-radius: 20px;
+  
+}
+
+.action-button {
+  background-color: #0f4124;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: #ffffff;
+}
+.description {
+  font-size: 14px;
+  color: rgb(255, 255, 255); /* Set the text color to red */
+  margin-top: 20px; /* Add 20px space below the photo */
+  line-height: 1.5;
+  text-align: center; /* Center-align the text */
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page with Profile Icon Dropdown</title>
+    <link rel="stylesheet" href="stylee.css">
+    <script>
+        $(document).ready(function() {
+            // Toggle the sidebar visibility
+            $(".toggle-btn").click(function() {
+                $(".sidebar").toggleClass("hidden");
+                const isHidden = $(".sidebar").hasClass("hidden");
+
+                // Update button text based on sidebar state
+                if (isHidden) {
+                    $(".toggle-btn").text("☰ Show Menu");
+                } else {
+                    $(".toggle-btn").text("☰ Hide Menu");
+                }
+            });
+
+            // Show/hide profile menu when clicking the profile icon
+            $(".profile-icon").click(function() {
+                $(".profile-menu").toggle(); // Toggle the visibility of the profile menu
+            });
+        });
+
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the clicked section
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        
+    </script>
+</head>
+<body>
+    
+    <div class="container">
+        <!-- Sidebar Toggle Container -->
+        <div class="toggle-container">
+            <button class="toggle-btn">☰ Hide Menu</button>
+        </div>
+
+       <!-- Sidebar -->
+<div class="sidebar">
+    <!-- Buttons and Links -->
+    <a href="post.html"><button>Create New Post</button></a>
+    <a href="feeds.php">Home</a>
+  
+    <a href="borrows.html">BorrowHub</a>
+    <a href="lend.html">LendHub</a>
+ 
+   
+    <a href="settings.html">Settings</a>
+    <hr>
+    <a href="my_account.html"><button>My Account</button></a>
+    <a href="switch_account.html"><button>Switch to another account</button></a>
+    <a href="lending-page.html"><button>Log Out</button></a>
+</div>
+
+
+        <!-- Main Content -->
+        <div class="main-content">
+              <!-- Profile Menu (Dropdown) -->
+            
+            <!-- Search Bar -->
+        
+
+            <!-- Profile Header -->
+            <div class="profile-header">
+               
+
+
+
+                <img src="image/girl.jpg" alt="Profile Picture">
+                <div class="profile-details">
+                    <h2>jannatul ferdous dipti</h2>
+                    <p class="user-bio">A passionate contributor to loan and donation initiatives. Loves technology, community service, and making a positive impact.</p>
+                    <p class="user-profession"><strong>Profession:</strong> Software Engineer</p>
+                    <p class="user-interests"><strong>Interests:</strong> Networking, Cybersecurity, and Social Development</p>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+             <!-- Tabs -->
+<div class="tabs">
+    <div onclick="showSection('post')">Posts</div>
+    <div onclick="showSection('friends')">Friends</div>
+    <div onclick="showSection('videos')">Videos</div>
+   
+</div>
+
+<!-- Posts Section -->
+<div id="post" class="section active">
+    <div class="post-container">
+        <div class="post-header">
+          <span>Emergency Alert</span>
+        </div>
+        <div class="post-content">
+          <p class="pos"><strong>Flood Emergency!</strong></p>
+          <p class="pos">Many people are trapped in the floodwaters. Urgent need for rescue and relief efforts. Please donate and share this message.</p>
+        </div>
+        <div class="post-footer">
+          Posted on: July 5, 2024
+        </div>
+      
+        <style>
+          .post-container {
+            margin-bottom: 20px;
+            border: 1px solid #1183e0; /* Red border for emergency */
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #fddddd; /* Light red background */
+          }
+      
+          .post-header {
+            color: #ec5440;
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+          .pos{
+           color:#121213;
+            
+          }
+      
+          .post-content {
+            margin-bottom: 10px;
+          }
+      
+          .post-footer {
+            color: #104de7;
+            font-size: 12px;
+          }
+        </style>
+      </div>
+      
+      <div class="post-container">
+        <div class="post-header">
+          <span>Urgent Appeal</span>
+        </div>
+        <div class="post-content">
+          <p class="pos"><strong>Landslide Warning!</strong></p>
+          <p class="pos">Several villages are at risk of landslides due to heavy rainfall. Evacuation efforts are underway. Please stay safe and follow instructions from local authorities.</p>
+        </div>
+        <div class="post-footer">
+          Posted on: July 4, 2024
+        </div>
+      </div>
+      
+      <div class="post-container">
+        <div class="post-header">
+          <span>Community Support Needed</span>
+        </div>
+        <div class="post-content">
+          <p class="pos"><strong>Cyclone Impact</strong></p>
+          <p class="pos">Many families have lost their homes due to the recent cyclone. Donations of food, water, and shelter are urgently needed. Please contribute to the relief efforts.</p>
+        </div>
+        <div class="post-footer">
+          Posted on: July 2, 2024
+        </div>
+      </div>
+</div>
+
+<!-- Friends Section -->
+<!-- Friends Section -->
+<!-- Friends Section -->
+<div id="friends" class="section">
+    <div class="create-friends" style="background: #212121; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+        <h3 style="color: #e0e0e0;">Friends List</h3>
+        <div id="friends-list" style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <!-- Friend 1 -->
+            <div style="background: #333; border-radius: 10px; padding: 10px; text-align: center; width: 120px;">
+                <img src="image/2.jpg" alt="Friend 1" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid #ffd700;">
+                <a href="Friend_profile.html?friend=Ayan" style="color: #fff; margin: 10px 0 0; text-decoration: none;">Ayan Rahman</a>
+            </div>
+
+            <!-- Friend 2 -->
+            <div style="background: #333; border-radius: 10px; padding: 10px; text-align: center; width: 120px;">
+                <img src="image/3.jpg" alt="Friend 2" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid #ffd700;">
+                <a href="friend-profile.html?friend=Maya" style="color: #fff; margin: 10px 0 0; text-decoration: none;">shafin ahmed</a>
+            </div>
+
+            <!-- Friend 3 -->
+            <div style="background: #333; border-radius: 10px; padding: 10px; text-align: center; width: 120px;">
+                <img src="image/4.jpg" alt="Friend 3" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid #ffd700;">
+                <a href="friend-profile.html?friend=Zihan" style="color: #fff; margin: 10px 0 0; text-decoration: none;">Zihan Karim</a>
+            </div>
+
+            <!-- Friend 4 -->
+            <div style="background: #333; border-radius: 10px; padding: 10px; text-align: center; width: 120px;">
+                <img src="image/5.jpg" alt="Friend 4" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid #ffd700;">
+                <a href="friend-profile.html?friend=Nadia" style="color: #fff; margin: 10px 0 0; text-decoration: none;">mahin</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Videos Section -->
+<!-- Videos Section -->
+<div id="videos" class="section">
+    <div class="create-videos" style="background: #212121; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+        <h3 style="color: #e0e0e0;">Uploaded Videos</h3>
+        <div id="video-list" style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <!-- Video Card with Comment Section -->
+            <div style="background: #333; border-radius: 10px; padding: 10px; text-align: center; width: 200px;">
+                <video controls style="width: 100%; border-radius: 10px;">
+                    <source src="vedios/flood.mp4" type="video/mp4">
+                </video>
+                <div class="comment-section" style="margin-top: 10px;">
+                    <!-- Comment List -->
+                    <div class="comments" style="max-height: 150px; overflow-y: auto; background: #212121; padding: 10px; border-radius: 5px; color: #e0e0e0;">
+                        <p><strong class="nam">@Sara:</strong> I'm praying for the safety and well-being of everyone affected.</p>
+<p><strong class="nam">@Shanto:</strong> Let's hope for the best and offer our support in any way we can.</p>
+                    </div>
+                    <!-- Add Comment -->
+                    <div style="margin-top: 10px;">
+                        <input type="text" class="comment-input" placeholder="Write a comment..." style="width: 80%; padding: 5px; border: none; border-radius: 5px; background: #333; color: #e0e0e0;">
+                        <button class="comment-btn" style="padding: 5px 10px; border: none; border-radius: 5px; background: #00f2f7; color: #121212; cursor: pointer;">Comment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Video Cards -->
+            <div style="background: #333; border-radius: 10px; padding: 10px; text-align: center; width: 200px;">
+                <video controls style="width: 100%; border-radius: 10px;">
+                    <source src="vedios/flood1.mp4" type="video/mp4">
+                </video>
+                <div class="comment-section" style="margin-top: 10px;">
+                    <div class="comments" style="max-height: 150px; overflow-y: auto; background: #212121; padding: 10px; border-radius: 5px; color: #e0e0e0;">
+                        <p><strong class="nam">@cosmic:</strong> This is a reminder of how important it is to be prepared for disasters.</p>
+<p><strong class="nam">@jay:</strong> We should check on our loved ones and make sure they're safe.</p>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <input type="text" class="comment-input" placeholder="Write a comment..." style="width: 80%; padding: 5px; border: none; border-radius: 5px; background: #333; color: #e0e0e0;">
+                        <button class="comment-btn" style="padding: 5px 10px; border: none; border-radius: 5px; background: #00f2f7; color: #121212; cursor: pointer;">Comment</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #333; border-radius: 10px; padding: 10px; text-align: center; width: 200px;">
+                <video controls style="width: 100%; border-radius: 10px;">
+                    <source src="vedios/flood2.mp4" type="video/mp4">
+                </video>
+                <div class="comment-section" style="margin-top: 10px;">
+                    <div class="comments" style="max-height: 150px; overflow-y: auto; background: #212121; padding: 10px; border-radius: 5px; color: #e0e0e0;">
+                        <p><strong class="nam">@Mahin:</strong> I feel so helpless seeing this. How can we make a difference?</p>
+<p><strong class="nam">@Mamun:</strong> Even small actions can help. Let's find a way to contribute.</p>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <input type="text" class="comment-input" placeholder="Write a comment..." style="width: 80%; padding: 5px; border: none; border-radius: 5px; background: #333; color: #e0e0e0;">
+                        <button class="comment-btn" style="padding: 5px 10px; border: none; border-radius: 5px; background: #00f2f7; color: #121212; cursor: pointer;">Comment</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #333; border-radius: 10px; padding: 10px; text-align: center; width: 200px;">
+                <video controls style="width: 100%; border-radius: 10px;">
+                    <source src="vedios/flood3.mp4" type="video/mp4">
+                </video>
+                <div class="comment-section" style="margin-top: 10px;">
+                    <div class="comments" style="max-height: 150px; overflow-y: auto; background: #212121; padding: 10px; border-radius: 5px; color: #e0e0e0;">
+                        <p><strong class="nam">@Rimi:</strong> Oh no, this is terrible! I can't imagine what they're going through.</p>
+                        <p><strong class="nam">@Nisha:</strong> We need to do something to help. Let's spread awareness.</p>
+                        
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <input type="text" class="comment-input" placeholder="Write a comment..." style="width: 80%; padding: 5px; border: none; border-radius: 5px; background: #333; color: #e0e0e0;">
+                        <button class="comment-btn" style="padding: 5px 10px; border: none; border-radius: 5px; background: #00f2f7; color: #121212; cursor: pointer;">Comment</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #333; border-radius: 10px; padding: 10px; text-align: center; width: 200px;">
+                <video controls style="width: 100%; border-radius: 10px;">
+                    <source src="vedios/flood4.mp4" type="video/mp4">
+                </video>
+                <div class="comment-section" style="margin-top: 10px;">
+                    <div class="comments" style="max-height: 150px; overflow-y: auto; background: #212121; padding: 10px; border-radius: 5px; color: #e0e0e0;">
+                        <p><strong class="nam">@sakib:</strong> This is heartbreaking. I hope everyone is okay.</p>
+                        <p><strong class="nam">@Tahin:</strong> It's devastating. We should donate to help those affected.</p>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <input type="text" class="comment-input" placeholder="Write a comment..." style="width: 80%; padding: 5px; border: none; border-radius: 5px; background: #333; color: #e0e0e0;">
+                        <button class="comment-btn" style="padding: 5px 10px; border: none; border-radius: 5px; background: #00f2f7; color: #121212; cursor: pointer;">Comment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // JavaScript to handle adding comments
+    document.querySelectorAll('.comment-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            // Get the parent video card
+            const commentSection = this.closest('.comment-section');
+
+            // Get the input field and its value
+            const inputField = commentSection.querySelector('.comment-input');
+            const commentText = inputField.value.trim();
+
+            // If the comment is not empty
+            if (commentText !== "") {
+                // Create a new comment paragraph
+                const newComment = document.createElement('p');
+                newComment.innerHTML = `<strong>You:</strong> ${commentText}`;
+                commentSection.querySelector('.comments').appendChild(newComment);
+
+                // Clear the input field
+                inputField.value = "";
+            }
+        });
+    });
+</script>
+
+   
+
+         
+
+
+
+
+
+
+        </div>
+    
+
+  
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Assistant with KNN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Voice Assistant Button */
+        .voice-assistant-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #3a5adb;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .voice-assistant-btn:hover {
+            background-color: #218838;
+            transform: scale(1.1);
+        }
+
+        .voice-assistant-btn:active {
+            background-color: #1e7e34;
+            transform: scale(1);
+        }
+
+        /* Voice Assistant Popup */
+        #assistant-popup {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            width: 250px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1000;
+        }
+
+        #assistant-popup input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        #assistant-popup button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #assistant-popup button:hover {
+            background-color: #218838;
+        }
+
+        #assistant-popup .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            color: #888;
+        }
+
+        /* Stop Button */
+        .stop-btn {
+            background-color: #dc3545;
+            padding: 6px 16px; /* Adjusted padding for smaller size */
+            font-size: 12px; /* Smaller font size */
+            border-radius: 50px; /* Rounded corners for a more modern look */
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .stop-btn:hover {
+            background-color: #c82333;
+            transform: scale(1.1);
+        }
+
+        .stop-btn:active {
+            background-color: #bd2130;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Voice Assistant Button -->
+    <button class="voice-assistant-btn" onclick="toggleAssistantPopup()">🤖</button>
+
+    <!-- Voice Assistant Popup -->
+    <div id="assistant-popup">
+        <div class="close-btn" onclick="closeAssistantPopup()">×</div>
+        <h3>AI Assistant</h3>
+        <input type="text" id="assistant-input" placeholder="Ask me something..." />
+        <button onclick="processInput()">Ask</button>
+        <button class="stop-btn" onclick="stopListening()">Stop</button>
+        <div id="response"></div>
+    </div>
+
+    <script>
+        let assistantPopup = document.getElementById("assistant-popup");
+        let assistantInput = document.getElementById("assistant-input");
+        let responseDiv = document.getElementById("response");
+
+        // Initialize speech synthesis (female voice)
+        let synth = window.speechSynthesis;
+        let voices = [];
+        
+        // Get available voices for the speech synthesis
+        function populateVoiceList() {
+            voices = synth.getVoices();
+            let femaleVoice = voices.find(voice => voice.name.toLowerCase().includes('female'));
+            if (femaleVoice) {
+                synth.voice = femaleVoice;
+            } else {
+                synth.voice = voices[0]; // Default to first available voice
+            }
+        }
+
+        // Populate voices when available
+        if (speechSynthesis.onvoiceschanged !== undefined) {
+            speechSynthesis.onvoiceschanged = populateVoiceList;
+        }
+
+        function toggleAssistantPopup() {
+            assistantPopup.style.display = assistantPopup.style.display === "block" ? "none" : "block";
+            startListening();
+        }
+
+        function closeAssistantPopup() {
+            assistantPopup.style.display = "none";
+            stopListening();
+        }
+
+        function processInput() {
+            let query = assistantInput.value;
+            if (query) {
+                let command = knnClassifier(query);
+                speakAnswer(command);
+                assistantInput.value = ""; // Clear input after query
+            } else {
+                responseDiv.innerText = "Please ask something!";
+            }
+        }
+
+        // KNN Algorithm: Basic Classifier for Commands
+        const commandDataset = [
+            {
+                command: "how do I apply for a student loan?",
+                label: "To apply for a student loan, you need to start by filling out the Free Application for Federal Student Aid (FAFSA). The FAFSA determines your eligibility for federal student loans, grants, and work-study programs. If you're applying for private loans, you will need to research lenders and provide personal financial information such as your income, credit score, and any co-signer information if required."
+            },
+            // Add your command dataset here...
+        ];
+
+        function knnClassifier(input) {
+            const inputVector = input.toLowerCase().split(" ");
+            let closestDistance = Infinity;
+            let predictedCommand = "";
+
+            commandDataset.forEach(item => {
+                let commandVector = item.command.split(" ");
+                let distance = cosineSimilarity(inputVector, commandVector);
+
+                if (distance < closestDistance) {
+                    closestDistance = distance;
+                    predictedCommand = item.label;
+                }
+            });
+
+            return predictedCommand || "I don't understand the command.";
+        }
+
+        // Cosine Similarity Function
+        function cosineSimilarity(vecA, vecB) {
+            let intersection = 0;
+            let normA = 0;
+            let normB = 0;
+
+            vecA.forEach(wordA => {
+                let countA = vecA.filter(x => x === wordA).length;
+                normA += Math.pow(countA, 2);
+                if (vecB.includes(wordA)) {
+                    intersection += countA * vecB.filter(x => x === wordA).length;
+                }
+            });
+
+            vecB.forEach(wordB => {
+                let countB = vecB.filter(x => x === wordB).length;
+                normB += Math.pow(countB, 2);
+            });
+
+            return 1 - (intersection / (Math.sqrt(normA) * Math.sqrt(normB)));
+        }
+
+        // Speech Synthesis (Text-to-Speech)
+        function speakAnswer(answer) {
+            let speech = new SpeechSynthesisUtterance();
+            speech.text = answer;
+            synth.speak(speech);
+        }
+
+        // Speech Recognition (Voice-to-Text)
+        let recognition;
+        let isListening = false;
+
+        function startListening() {
+            if (!("webkitSpeechRecognition" in window)) {
+                alert("Sorry, your browser doesn't support speech recognition.");
+                return;
+            }
+
+            recognition = new webkitSpeechRecognition();
+            recognition.lang = "en-US";
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+
+            recognition.onstart = function () {
+                isListening = true;
+                responseDiv.innerText = "Listening...";
+            };
+
+            recognition.onresult = function (event) {
+                let result = event.results[0][0].transcript;
+                assistantInput.value = result;
+                processInput();
+            };
+
+            recognition.onerror = function (event) {
+                responseDiv.innerText = "Error occurred: " + event.error;
+            };
+
+            recognition.start();
+        }
+
+        // Stop Listening
+        function stopListening() {
+            if (recognition && isListening) {
+                recognition.stop();
+                isListening = false;
+                responseDiv.innerText = "Stopped listening.";
+            }
+
+            if (synth.speaking) {
+                synth.cancel(); // Stop speaking if any text is being spoken
+            }
+        }
+    </script>
+</body>
+</html>

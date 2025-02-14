@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page - Student Loan Crowdfunding</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+       /* Blog Header Styling */
+header {
+    background-color: #1a1a1a;  /* Dark background to match the navbar theme */
+    color: white;
+    padding: 20px 30px;  /* Added more padding for space */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    border-bottom: 4px solid #f1f1f1; /* Bottom line for separation */
+}
+
+header nav {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;  /* Center the navigation links */
+    gap: 30px;  /* Adds spacing between nav items */
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 5px;
+}
+
+/* Hover effect for nav links */
+header nav a:hover {
+    color: #ff6600;  /* Change color on hover */
+    border-bottom: 2px solid #ff6600; /* Underline effect */
+    padding-bottom: 10px;  /* Slight increase in padding for effect */
+}
+
+/* Headline in the header */
+header h1 {
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0;
+    color: #fff;
+    border-left: 4px solid #ff6600;  /* Stylish left border */
+    padding-left: 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* Adding a small line effect below the headline */
+header h1::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #ff6600;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+header h1:hover::after {
+    transform: scaleX(1); /* Animated line expansion when headline is hovered */
+}
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .featured {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .featured img {
+            width: 50%;
+            border-radius: 10px;
+        }
+        .featured-content {
+            flex: 1;
+        }
+        .featured-content h2 {
+            color: #007bff;
+        }
+        .featured-content p {
+            margin-top: 10px;
+        }
+        .blogs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .blog-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .blog-card-content {
+            padding: 15px;
+        }
+        .blog-card-content h3 {
+            margin: 0;
+            color: #007bff;
+        }
+        .blog-card-content p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Loan Crowdfunding Blog</h1>
+        <nav>
+            <a href="lending-page.html">Home</a>
+            
+            <a href="#">Blog</a>
+           
+        </nav>
+    </header>
+    <div class="container">
+        <div class="featured">
+           
+            <div class="featured-content">
+                <h2>How Crowdfunding is Changing Education</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel ligula in nunc bibendum aliquet et vitae lacus.</p>
+            </div>
+        </div>
+        <div class="blogs">
+            <div class="blog-card">
+                <img src="image/5-bin.jpg" alt="Blog 1">
+                <div class="blog-card-content">
+                    <h3>Top 5 Benefits of Crowdfunding</h3>
+                    <p>Discover the advantages of crowdfunding for students and donors alike.</p>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="image/success.jpg" alt="Blog 2">
+                <div class="blog-card-content">
+                    <h3>Success Stories: Funded Students</h3>
+                    <p>Read about students who achieved their dreams through crowdfunding.</p>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="image/7-Steps-to-Create-a-Startup-Marketing-Campaign.png" alt="Blog 3">
+                <div class="blog-card-content">
+                    <h3>How to Start a Campaign</h3>
+                    <p>Learn the steps to create an effective crowdfunding campaign.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page with Profile Icon Dropdown</title>
+    <link rel="stylesheet" href="fstyle.css">
+    <script>
+        $(document).ready(function() {
+            // Toggle the sidebar visibility
+            $(".toggle-btn").click(function() {
+                $(".sidebar").toggleClass("hidden");
+                const isHidden = $(".sidebar").hasClass("hidden");
+
+                // Update button text based on sidebar state
+                if (isHidden) {
+                    $(".toggle-btn").text("☰ Show Menu");
+                } else {
+                    $(".toggle-btn").text("☰ Hide Menu");
+                }
+            });
+
+            // Show/hide profile menu when clicking the profile icon
+            $(".profile-icon").click(function() {
+                $(".profile-menu").toggle(); // Toggle the visibility of the profile menu
+            });
+        });
+
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the clicked section
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        
+    </script>
+</head>
+<body>
+    
+    <div class="container">
+        <!-- Sidebar Toggle Container -->
+        <div class="toggle-container">
+            <button class="toggle-btn">☰ Hide Menu</button>
+        </div>
+
+       <!-- Sidebar -->
+<!-- Sidebar -->
+<div class="sidebar">
+    <h1>Information</h1>
+   <!-- 1. University Text -->
+<div class="sidebar-item">
+    <i class="fa fa-university icon" aria-hidden="true"></i>
+    <i class="fa fa-university icon"></i>
+    <span>
+        
+        <img class="img2" src="image/uni.png"><p class="side-info">Study at United International University (UIU)</p>
+    </span>
+</div>
+
+    <!-- 2. Location -->
+    <div class="sidebar-item">
+        <i class="fa fa-university icon" aria-hidden="true"></i>
+    <i class="fa fa-university icon"></i>
+        <span> <img class="img2" src="image/home.png"> Motijheel, Dhaka-1000</span>
+    </div>
+
+    <!-- 3. Facebook Profile Link -->
+    <div class="sidebar-item">
+        <i class="fa fa-university icon" aria-hidden="true"></i>
+        <i class="fas fa-id-card"></i>
+       
+        <span>
+            <img class="img2" src="image/facebook.png"><a href="https://facebook.com/your-profile" target="_blank">Facebook Profile</a></span>
+    </div>
+
+    <!-- 4. Trust Ratings Page -->
+    <div class="sidebar-item">
+        <i class="fa fa-university icon" aria-hidden="true"></i>
+        <i class="fas fa-id-card"></i>
+        
+        <a href="ratings.html">
+            <button><img class="img2" src="image/goodwill.png">Trust Ratings</button>
+        </a>
+    </div>
+
+    <!-- 5. Find Me URL with Barcode -->
+    <div class="sidebar-item">
+        <i class="fa fa-university icon" aria-hidden="true"></i>
+        <i class="fas fa-id-card"></i>
+        <a href="barcode_page.html">
+            <button><img class="img2" src="image/My_PDF.png">Find Me</button>
+        </a>
+    </div>
+    <hr>
+<h1>Contact</h1>
+
+<div class="info-container">
+    <div class="info-item">
+        <i class="fas fa-id-card"></i>
+        <span>
+            <img class="img1" src="image/id.png">
+            <p class="p-info">011213052</p>
+        </span>
+    </div>
+    <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <span>
+            <img class="img1" src="image/message.png">
+            <p class="p-info">mShan@gmail.com</p>
+        </span>
+    </div>
+    <div class="info-item">
+        <i class="fas fa-exclamation-circle"></i>
+        <span>
+            <img class="img1" src="image/phone.png">
+            <p class="p-info">012345678</p>
+        </span>
+    </div>
+    <div class="info-item">
+        <i class="fas fa-exclamation-circle"></i>
+        <span>
+            <img class="img1" src="image/sos.png">
+            <p class="p-info">Emergency: 011213052</p>
+        </span>
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+        <!-- Main Content -->
+        <div class="main-content">
+              <!-- Profile Menu (Dropdown) -->
+            
+            <!-- Search Bar -->
+        
+
+            <!-- Profile Header -->
+            <div class="profile-header">
+              
+
+
+
+                <img src="image/jamil.jpg" alt="Profile Picture">
+                <div class="profile-details">
+                    <h2>Jamilur Rahman</h2>
+                    <p class="user-bio">A passionate contributor to loan and donation initiatives. Loves technology, community service, and making a positive impact.</p>
+                    <p class="user-profession"><strong>Profession:</strong> Software Engineer</p>
+                    <p class="user-interests"><strong>Interests:</strong> Networking, Cybersecurity, and Social Development</p>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+             <!-- Tabs -->
+<div class="tabs">
+    <div onclick="showSection('post')">Details</div>
+    <div onclick="showSection('friends')">Friends</div>
+    <div onclick="showSection('videos')">Videos</div>
+   
+</div>
+
+<!-- Posts Section -->
+<div id="post" class="section active">
+    <div class="student-profile">
+        <div class="profile-image">
+          <img src="image/jam.jpg" alt="Student Image">
+        </div>
+        <div class="profile-info">
+          <h2>Jamilur Rahman</h2>
+          <p><strong>Batch:</strong> 213</p>
+          <p><strong>Major:</strong> Computer Science</p>
+          <p><strong>Year:</strong> 4th</p>
+          <div class="personal-details">
+            <h3>Personal Details</h3>
+            <ul>
+              <li class="bas"><strong class="bas">Date of Birth:</strong> July 4, 1998</li>
+              <li class="bas"><strong class="bas">Blood Group:</strong> A+</li>
+              <li class="bas"><strong class="bas">Father's Name:</strong> Anisul Islam</li>
+              <li class="bas"><strong class="bas">Mother's Name:</strong> Reyana Akter</li>
+              <li class="bas"><strong class="bas">Father's Number:</strong> +1234567890</li>
+              <li class="bas"><strong class="bas">Mother's Number:</strong> +1847373398</li>
+              <li class="bas"><strong class="bas">Income Source:</strong> Father (Business)</li> 
+            </ul>
+          </div>
+          <div class="academic-standing">
+            <h3>Clubs</h3>
+            <ul>
+                <li class="clu">Robotics Club</li>
+                <li class="clu">Debate Club</li>
+                <li class="clu">Music Club</li>
+              </ul>
+          </div>
+          <div class="achievements">
+            <h3>Achievements</h3>
+            <ul>
+                <li class="last">Received scholarship from [Scholarship Name]</li>
+                <li class="last">Volunteer of the Year Award (2022)</li>
+              <li class="last">First Place in Robotics Competition (2023)</li>
+              <li class="last">Published research paper in [Journal Name] (2024)</li> 
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <style>
+         .last{
+            color:#121212
+        }
+        .clu{
+            color:#121212
+        }
+        .bas{
+            color:#121212
+        }
+        .student-profile {
+          display: flex;
+          margin: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 20px;
+          background-color: #f5f5dc;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+        }
+      
+        .profile-image {
+          width: 150px;
+          margin-right: 20px;
+        }
+      
+        .profile-image img {
+          width: 100%;
+          border-radius: 50%;
+          border: 2px solid #ddd;
+        }
+      
+        .profile-info {
+          flex: 1;
+        }
+      
+        .profile-info h2 {
+          margin-bottom: 10px;
+          color: #333;
+        }
+      
+        .profile-info p {
+          margin-bottom: 5px;
+          color: #666;
+        }
+      
+        .profile-info h3 {
+          margin-top: 15px;
+          color: #333;
+        }
+      
+        .profile-info ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+      
+        .profile-info li {
+          margin-bottom: 5px;
+          display: flex; 
+          align-items: center; 
+        }
+      
+        .profile-info li:before {
+          content: "•"; /* Bullet point */
+          margin-right: 5px;
+          color: #333;
+        }
+      </style>
+</div>
+
+<!-- Friends Section -->
+<!-- Friends Section -->
+<!-- Friends Section -->
+<div id="friends" class="section">
+    <div class="create-friends" style="background: #212121; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+        <h3 style="color: #e0e0e0;">Friends List</h3>
+        <div id="friends-list" style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <!-- Friend 1 -->
+            <div style="background: #333; border-radius: 10px; padding: 10px; text-align: center; width: 120px;">
+                <img src="image/2.jpg" alt="Friend 1" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid #ffd700;">
+                <a href="friend-profile.html?friend=Ayan" style="color: #fff; margin: 10px 0 0; text-decoration: none;">Ayan Rahman</a>
+            </div>
+
+            <!-- Friend 2 -->
+            <div style="background: #333; border-radius: 10px; padding: 10px; text-align: center; width: 120px;">
+                <img src="image/3.jpg" alt="Friend 2" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid #ffd700;">
+                <a href="friend-profile.html?friend=Maya" style="color: #fff; margin: 10px 0 0; text-decoration: none;">Maya Akhter</a>
+            </div>
+
+            <!-- Friend 3 -->
+            <div style="background: #333; border-radius: 10px; padding: 10px; text-align: center; width: 120px;">
+                <img src="image/4.jpg" alt="Friend 3" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid #ffd700;">
+                <a href="friend-profile.html?friend=Zihan" style="color: #fff; margin: 10px 0 0; text-decoration: none;">Zihan Karim</a>
+            </div>
+
+            <!-- Friend 4 -->
+            <div style="background: #333; border-radius: 10px; padding: 10px; text-align: center; width: 120px;">
+                <img src="image/5.jpg" alt="Friend 4" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid #ffd700;">
+                <a href="friend-profile.html?friend=Nadia" style="color: #fff; margin: 10px 0 0; text-decoration: none;">Nadia Hasan</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Videos Section -->
+<!-- Videos Section -->
+<div id="videos" class="section">
+    <div class="create-videos" style="background: #212121; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+        <h3 style="color: #e0e0e0;">Uploaded Videos</h3>
+        <div id="video-list" style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <!-- Video Card with Comment Section -->
+            <div style="background: #333; border-radius: 10px; padding: 10px; text-align: center; width: 200px;">
+                <video controls style="width: 100%; border-radius: 10px;">
+                    <source src="vedios/flood.mp4" type="video/mp4">
+                </video>
+                <div class="comment-section" style="margin-top: 10px;">
+                    <!-- Comment List -->
+                    <div class="comments" style="max-height: 150px; overflow-y: auto; background: #212121; padding: 10px; border-radius: 5px; color: #e0e0e0;">
+                        <p><strong class="nam">@Sara:</strong> I'm praying for the safety and well-being of everyone affected.</p>
+<p><strong class="nam">@Shanto:</strong> Let's hope for the best and offer our support in any way we can.</p>
+                    </div>
+                    <!-- Add Comment -->
+                    <div style="margin-top: 10px;">
+                        <input type="text" class="comment-input" placeholder="Write a comment..." style="width: 80%; padding: 5px; border: none; border-radius: 5px; background: #333; color: #e0e0e0;">
+                        <button class="comment-btn" style="padding: 5px 10px; border: none; border-radius: 5px; background: #00f2f7; color: #121212; cursor: pointer;">Comment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Video Cards -->
+            <div style="background: #333; border-radius: 10px; padding: 10px; text-align: center; width: 200px;">
+                <video controls style="width: 100%; border-radius: 10px;">
+                    <source src="vedios/flood1.mp4" type="video/mp4">
+                </video>
+                <div class="comment-section" style="margin-top: 10px;">
+                    <div class="comments" style="max-height: 150px; overflow-y: auto; background: #212121; padding: 10px; border-radius: 5px; color: #e0e0e0;">
+                        <p><strong class="nam">@cosmic:</strong> This is a reminder of how important it is to be prepared for disasters.</p>
+<p><strong class="nam">@jay:</strong> We should check on our loved ones and make sure they're safe.</p>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <input type="text" class="comment-input" placeholder="Write a comment..." style="width: 80%; padding: 5px; border: none; border-radius: 5px; background: #333; color: #e0e0e0;">
+                        <button class="comment-btn" style="padding: 5px 10px; border: none; border-radius: 5px; background: #00f2f7; color: #121212; cursor: pointer;">Comment</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #333; border-radius: 10px; padding: 10px; text-align: center; width: 200px;">
+                <video controls style="width: 100%; border-radius: 10px;">
+                    <source src="vedios/flood2.mp4" type="video/mp4">
+                </video>
+                <div class="comment-section" style="margin-top: 10px;">
+                    <div class="comments" style="max-height: 150px; overflow-y: auto; background: #212121; padding: 10px; border-radius: 5px; color: #e0e0e0;">
+                        <p><strong class="nam">@Mahin:</strong> I feel so helpless seeing this. How can we make a difference?</p>
+<p><strong class="nam">@Mamun:</strong> Even small actions can help. Let's find a way to contribute.</p>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <input type="text" class="comment-input" placeholder="Write a comment..." style="width: 80%; padding: 5px; border: none; border-radius: 5px; background: #333; color: #e0e0e0;">
+                        <button class="comment-btn" style="padding: 5px 10px; border: none; border-radius: 5px; background: #00f2f7; color: #121212; cursor: pointer;">Comment</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #333; border-radius: 10px; padding: 10px; text-align: center; width: 200px;">
+                <video controls style="width: 100%; border-radius: 10px;">
+                    <source src="vedios/flood3.mp4" type="video/mp4">
+                </video>
+                <div class="comment-section" style="margin-top: 10px;">
+                    <div class="comments" style="max-height: 150px; overflow-y: auto; background: #212121; padding: 10px; border-radius: 5px; color: #e0e0e0;">
+                        <p><strong class="nam">@Rimi:</strong> Oh no, this is terrible! I can't imagine what they're going through.</p>
+                        <p><strong class="nam">@Nisha:</strong> We need to do something to help. Let's spread awareness.</p>
+                        
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <input type="text" class="comment-input" placeholder="Write a comment..." style="width: 80%; padding: 5px; border: none; border-radius: 5px; background: #333; color: #e0e0e0;">
+                        <button class="comment-btn" style="padding: 5px 10px; border: none; border-radius: 5px; background: #00f2f7; color: #121212; cursor: pointer;">Comment</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #333; border-radius: 10px; padding: 10px; text-align: center; width: 200px;">
+                <video controls style="width: 100%; border-radius: 10px;">
+                    <source src="vedios/flood4.mp4" type="video/mp4">
+                </video>
+                <div class="comment-section" style="margin-top: 10px;">
+                    <div class="comments" style="max-height: 150px; overflow-y: auto; background: #212121; padding: 10px; border-radius: 5px; color: #e0e0e0;">
+                        <p><strong class="nam">@sakib:</strong> This is heartbreaking. I hope everyone is okay.</p>
+                        <p><strong class="nam">@Tahin:</strong> It's devastating. We should donate to help those affected.</p>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <input type="text" class="comment-input" placeholder="Write a comment..." style="width: 80%; padding: 5px; border: none; border-radius: 5px; background: #333; color: #e0e0e0;">
+                        <button class="comment-btn" style="padding: 5px 10px; border: none; border-radius: 5px; background: #00f2f7; color: #121212; cursor: pointer;">Comment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // JavaScript to handle adding comments
+    document.querySelectorAll('.comment-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            // Get the parent video card
+            const commentSection = this.closest('.comment-section');
+
+            // Get the input field and its value
+            const inputField = commentSection.querySelector('.comment-input');
+            const commentText = inputField.value.trim();
+
+            // If the comment is not empty
+            if (commentText !== "") {
+                // Create a new comment paragraph
+                const newComment = document.createElement('p');
+                newComment.innerHTML = `<strong>You:</strong> ${commentText}`;
+                commentSection.querySelector('.comments').appendChild(newComment);
+
+                // Clear the input field
+                inputField.value = "";
+            }
+        });
+    });
+</script>
+
+   
+
+         
+
+
+
+
+
+
+        </div>
+    
+
+  
+</body>
+</html>

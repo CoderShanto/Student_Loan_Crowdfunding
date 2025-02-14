@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Bank Statement</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+.container {
+  width: 80%;
+  margin: 50px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 36px;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.header p {
+  font-size: 18px;
+}
+
+.account-summary {
+  margin-bottom: 30px;
+}
+
+.account-summary h2 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-item {
+  text-align: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #ecf0f1;
+  width: 48%;
+}
+
+.summary-item p {
+  font-size: 18px;
+  color: #333;
+}
+
+.balance {
+  font-size: 24px;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.transactions table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transactions th,
+.transactions td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.transactions th {
+  background-color: #2980b9;
+  color: white;
+  font-size: 16px;
+}
+
+.transactions td {
+  font-size: 16px;
+}
+
+.transactions tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.transactions tr:hover {
+  background-color: #ecf0f1;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #777;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Student Bank Statement</h1>
+      <p>Account Number: 123-456-789</p>
+      <p>Account Holder: John Doe</p>
+    </header>
+
+    <section class="account-summary">
+      <h2>Account Summary</h2>
+      <div class="summary">
+        <div class="summary-item">
+          <p>Total Balance</p>
+          <p class="balance">₹ 12,500</p>
+        </div>
+        <div class="summary-item">
+          <p>Available Balance</p>
+          <p class="balance">₹ 9,000</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="transactions">
+      <h2>Recent Transactions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Deposit</th>
+            <th>Withdrawal</th>
+            <th>Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01/09/2025</td>
+            <td>Scholarship Payment</td>
+            <td>₹ 10,000</td>
+            <td></td>
+            <td>₹ 12,500</td>
+          </tr>
+          <tr>
+            <td>25/08/2025</td>
+            <td>Tuition Fee Payment</td>
+            <td></td>
+            <td>₹ 5,000</td>
+            <td>₹ 7,500</td>
+          </tr>
+          <tr>
+            <td>15/08/2025</td>
+            <td>Part-Time Job Earnings</td>
+            <td>₹ 2,000</td>
+            <td></td>
+            <td>₹ 12,500</td>
+          </tr>
+          <tr>
+            <td>01/08/2025</td>
+            <td>Book Purchase</td>
+            <td></td>
+            <td>₹ 500</td>
+            <td>₹ 12,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="footer">
+      <p>For inquiries, contact studentservices@university.edu</p>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Student Loan Crowdfunding</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+       /* Header Styling */
+header {
+    background-color: #1a1a1a; /* Dark background to match the previous theme */
+    color: #fff;
+    padding: 20px 30px; /* More padding for spacing */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    border-bottom: 4px solid #f1f1f1; /* Bottom line to separate header */
+}
+
+/* Logo styling */
+header .logo h1 {
+    font-size: 32px;
+    display: inline;
+    margin-left: 10px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-left: 4px solid #ff6600; /* Left border for style */
+    padding-left: 15px;
+    position: relative;
+}
+
+/* Animated line effect for logo */
+header .logo h1::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #ff6600;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+header .logo h1:hover::after {
+    transform: scaleX(1); /* Line expands when hovered */
+}
+
+/* Navigation Styling */
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 30px; /* Adds spacing between the links */
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 5px;
+}
+
+/* Hover effect for navigation links */
+header nav ul li a:hover {
+    color: #ff6600; /* Change color on hover */
+    border-bottom: 2px solid #ff6600; /* Underline effect on hover */
+    padding-bottom: 10px;
+}
+
+/* Icon Styling */
+header .logo i {
+    font-size: 40px;
+    color: #fff;
+}
+
+
+        /* About Us Section */
+        .about-us {
+            background-color: #fff;
+            padding: 50px 20px;
+            margin-top: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-us h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .about-us p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .about-us h3 {
+            font-size: 28px;
+            margin-top: 30px;
+            color: #333;
+        }
+
+        .about-us img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* Add some spacing to the sections */
+        .about-container p {
+            margin-bottom: 20px;
+        }
+        /* Image styling */
+.img {
+    max-width: 100%;            /* Ensure image is responsive */
+    height: 20vh;               /* Maintain aspect ratio */
+    border-radius: 10px;        /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Soft shadow around the image */
+    margin-top: 20px;           /* Space between text and image */
+    width: 20vw;                 /* Limit width of image to 80% of the container */
+    display: block;             /* Ensure image behaves like a block element */
+    margin-left: auto;          /* Center-align horizontally */
+    margin-right: auto;         /* Center-align horizontally */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fa fa-graduation-cap"></i> <!-- Add an icon -->
+            <h1>Student Loan Crowdfunding</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="lending-page.html">Home</a></li>
+                <li><a href="about_us.html" class="active">About Us</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about-us">
+        <div class="about-container">
+            <h2>About Us</h2>
+            <p>Welcome to <strong>Student Loan Crowdfunding</strong>, a unique platform designed to help students overcome financial barriers to higher education. We understand that tuition fees and other educational expenses can be overwhelming, especially for students from underprivileged backgrounds. Our platform allows individuals and organizations to donate funds to help students secure loans or donations for their education.</p>
+
+            <img  class="img" src="image/studentloan.jpg" alt="Student loan crowdfunding" /> <!-- Example image -->
+
+            <h3>Our Purpose</h3>
+            <p>Our platform provides a secure, easy-to-use environment for students to raise the necessary funds to pursue their dreams. Whether it’s paying for tuition, books, accommodation, or other expenses, we connect students with generous donors who want to support their education. Our mission is to make education accessible to all, regardless of financial background.</p>
+               
+            <img  class="img" src="image/purpose.jpg" alt="Student loan crowdfunding" />
+
+            <h3>How It Works</h3>
+            <p>1. <strong>Students</strong> create a profile, describe their educational goals, and share their financial needs.</p>
+            <p>2. <strong>Donors</strong> browse through student profiles and choose to contribute to the students’ funding goals.</p>
+            <p>3. The funds are transferred directly to the student’s account or tuition provider, helping the student pay for their education.</p>
+            <p>Our platform ensures complete transparency throughout the process, giving both students and donors confidence that their transactions are secure and that the donations are used for educational purposes.</p>
+             
+
+            <h3>Our Mission</h3>
+            <p>Our mission is to provide students from all walks of life the opportunity to pursue their academic goals by bridging the gap between their educational needs and available financial resources. We believe that education is a right, not a privilege, and we aim to create an equal opportunity for all students to achieve their dreams.</p>
+            
+            <img  class="img" src="image/mission.jpg" alt="Student loan crowdfunding" />
+
+            <h3>Our Vision</h3>
+            <p>We envision a world where financial challenges no longer prevent students from achieving their full potential. Our platform aspires to be the leading online crowdfunding platform for students, connecting them with donors around the world who share our belief in education’s transformative power.</p>
+            <img  class="img" src="image/vision..jpg" alt="Student loan crowdfunding" />
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Student Loan Crowdfunding. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Include FontAwesome for the icon -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

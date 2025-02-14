@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Page</title>
+    <style>
+        /* General Reset */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .post-page-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header Styling */
+        .post-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        /* Form Container Styling */
+        .post-form-container {
+            flex: 1;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .btn-submit {
+            padding: 12px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #218838;
+        }
+
+        /* Footer Styling */
+        .post-footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="post-page-container">
+        <header class="post-header">
+            <h1>Create a Post</h1>
+        </header>
+
+        <main class="post-form-container">
+            <form id="postForm" action="post_handler.php" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="postTitle">Title</label>
+                    <input type="text" id="postTitle" name="postTitle" placeholder="Enter your post title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="postContent">Content</label>
+                    <textarea id="postContent" name="postContent" placeholder="Write something..." rows="5" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="postMedia">Add Images/Videos</label>
+                    <input type="file" id="postMedia" name="postMedia" accept="image/*,video/*" multiple>
+                </div>
+
+                <button type="submit" class="btn-submit">Post</button>
+            </form>
+        </main>
+    </div>
+
+    <footer class="post-footer">
+        <p>&copy; 2025 Student Loan Crowdfunding | All rights reserved</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image CAPTCHA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .captcha-container {
+            margin: 20px auto;
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .captcha-instructions {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .captcha-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .captcha-grid img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border: 3px solid transparent;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+        .captcha-grid img.selected {
+            border-color: #4CAF50;
+        }
+        .verify-btn {
+            padding: 10px 20px;
+            margin-top: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .verify-btn:hover {
+            background-color: #45a049;
+        }
+        .verify-btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .locked {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="captcha-container" id="captcha-container">
+        <h1>Are You Human? Let's Find Out!</h1>
+        <h2>Image CAPTCHA</h2>
+        <p class="captcha-instructions">Select all images of a <strong>cat</strong>.</p>
+        <div class="captcha-grid">
+            <img src="image/cat1.jpg" alt="Cat" data-type="cat">
+            <img src="image/dog.jpg" alt="Dog" data-type="dog">
+            <img src="image/cat2.jpg" alt="Cat" data-type="cat">
+            <img src="image/car.jpg" alt="Car" data-type="car">
+            <img src="image/cat3.jpg" alt="Cat" data-type="cat">
+            <img src="image/tree.jpg" alt="Tree" data-type="tree">
+        </div>
+        <button class="verify-btn" onclick="verifyCaptcha()" id="verify-btn">Verify</button>
+        <p class="result" id="captcha-result"></p>
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.captcha-grid img');
+        const resultElement = document.getElementById('captcha-result');
+        const verifyButton = document.getElementById('verify-btn');
+        let attemptCounter = 0; // Overall attempt counter
+        let lockCounter = 0;   // Lockout counter
+        let isLocked = false;
+
+        // Add click event to toggle selection
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                if (!isLocked) {
+                    image.classList.toggle('selected');
+                }
+            });
+        });
+
+        // Verify the CAPTCHA
+        function verifyCaptcha() {
+            if (isLocked) return;
+
+            const selectedImages = document.querySelectorAll('.captcha-grid img.selected');
+            let isValid = true;
+
+            // Check if all selected images are "cat"
+            selectedImages.forEach(img => {
+                if (img.getAttribute('data-type') !== 'cat') {
+                    isValid = false;
+                }
+            });
+
+            // Check if the correct number of "cat" images are selected
+            const totalCats = document.querySelectorAll('.captcha-grid img[data-type="cat"]').length;
+            if (selectedImages.length !== totalCats) {
+                isValid = false;
+            }
+
+            if (isValid) {
+                resultElement.textContent = "Verification successful! Redirecting to login page...";
+                resultElement.style.color = "green";
+
+                // Redirect to the login page after a short delay
+                setTimeout(() => {
+                    window.location.href = "login.php";
+                }, 2000);
+            } else {
+                attemptCounter++;
+                if (attemptCounter >= 2) {
+                    lockCounter++;
+                    if (lockCounter >= 2) {
+                        kickUser();
+                    } else {
+                        lockSystem();
+                    }
+                } else {
+                    resultElement.textContent = `Incorrect selection. Attempt ${attemptCounter}/2.`;
+                    resultElement.style.color = "red";
+                }
+            }
+        }
+
+        // Lock the system after 2 failed attempts
+        function lockSystem() {
+            isLocked = true;
+            verifyButton.disabled = true;
+            resultElement.textContent = "System Locked. You have been detected as a robot. Try again in 10 seconds.";
+            resultElement.style.color = "red";
+
+            let countdown = 10;
+            const interval = setInterval(() => {
+                resultElement.textContent = `System Locked. Try again in ${countdown} seconds.`;
+                countdown--;
+
+                if (countdown < 0) {
+                    clearInterval(interval);
+                    unlockSystem();
+                }
+            }, 1000);
+        }
+
+        // Unlock the system after 10 seconds
+        function unlockSystem() {
+            isLocked = false;
+            verifyButton.disabled = false;
+            resultElement.textContent = "You can try again now.";
+            resultElement.style.color = "green";
+        }
+
+        // Kick the user out after repeated failed attempts
+        function kickUser() {
+            isLocked = true;
+            verifyButton.disabled = true;
+            resultElement.textContent = "You have been detected as a robot and removed from the website.";
+            resultElement.style.color = "red";
+
+            // Redirect to a blocked page after a short delay
+            setTimeout(() => {
+                window.location.href = "blocked.html"; // Replace with your blocked page URL
+            }, 3000);
+        }
+    </script>
+
+</body>
+</html>
